@@ -2,6 +2,12 @@
 
 <p align="center">
   <b>A private ChatGPT-style interface for the models on your own Mac.</b><br>
+<!-- showcase:start -->
+> **[▶ Live showcase](https://phlppgdfry.github.io/LocalMind/)** — screens, a recorded walkthrough and what is real versus simulated
+
+[![Live showcase: LocalMind](site/preview.png)](https://phlppgdfry.github.io/LocalMind/)
+<!-- showcase:end -->
+
   Next.js + Ollama. Streaming answers, conversation memory, a reasoning view — and nothing leaves <code>127.0.0.1</code>.
 </p>
 
