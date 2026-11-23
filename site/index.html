@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LocalMind — a private chat UI for the models on your own Mac</title>
+<meta name="description" content="A ChatGPT-style interface for Ollama: streaming answers, conversation memory and a reasoning view, with nothing leaving 127.0.0.1. Watch a real recording and see the screens.">
+<link rel="canonical" href="https://phlppgdfry.github.io/LocalMind/">
+<meta property="og:type" content="website"><meta property="og:title" content="LocalMind — a private chat UI for the models on your own Mac"><meta property="og:description" content="A ChatGPT-style interface for Ollama: streaming answers, conversation memory and a reasoning view, with nothing leaving 127.0.0.1. Watch a real recording and see the screens.">
+<meta property="og:url" content="https://phlppgdfry.github.io/LocalMind/"><meta property="og:image" content="https://phlppgdfry.github.io/LocalMind/og.jpg"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0d12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23818cf8'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/showcase.css">
+<style>:root{--brand:#818cf8;--accent-ink:#0b0b1f}</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="brand" href="#"><i class="dot"></i><span>LocalMind</span></a>
+  <nav><a class="" href="#how">How it works</a><a class="hide-sm" href="#screens">Screens</a><a class="hide-sm" href="#run">Run it</a><a href="https://github.com/phlppgdfry/LocalMind" aria-label="GitHub repository">GitHub</a><button class="theme" type="button" aria-label="Toggle light or dark theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></nav>
+</div></div>
+<main>
+<header class="hero"><div class="wrap grid">
+  <div>
+    <div class="kicker"><span>Next.js 16 · Ollama · runs 100% local</span><span class="chip status">Working app</span></div>
+    <h1>Some text should <em>never leave your Mac</em>.</h1>
+    <p class="lede">A contract, a customer email, unreleased code. Ollama runs good models locally, but its terminal is not where you want to rewrite an email. LocalMind is the small, honest UI on top: tokens stream in, follow-ups remember the conversation, and the browser only ever talks to a server you run, which only ever talks to Ollama.</p>
+    <div class="ctas"><a class="btn" href="https://github.com/phlppgdfry/LocalMind"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg> Source on GitHub</a></div>
+    <div class="stack"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Ollama</span><span class="chip">NDJSON streaming</span><span class="chip">Vitest</span><span class="chip">No telemetry</span></div>
+  </div>
+  <div class="hero-visual"><div class="frame"><div class="bar"><i></i><i></i><i></i><b>localhost:3000 · LocalMind</b></div><img src="img/docs-media-demo.gif" alt="LocalMind" width="960" height="600"></div><div class="caption">Real recording: qwen3:1.7b on an Apple-silicon Mac, about 60 to 85 tokens per second, first token in under half a second.</div></div>
+</div></header>
+<section id="why"><div class="wrap">
+  <p class="eyebrow">Why it exists</p><h2>Cloud chat is the wrong place for the text you are most careful with.</h2>
+  <div class="problem">
+    <div class="card before"><div class="label">Without it</div><p>The easy answer is to paste it into a hosted chatbot. The careful answer is a local model, but then you are back in a terminal with no history, no follow-ups and no feel for how fast the model really is.</p></div>
+    <div class="card after"><div class="label">With it</div><p>LocalMind gives a local model the interface people expect, and keeps the promise honestly: no analytics, no external fonts at runtime, no cloud calls. Stop really stops generation on the Mac, and when Ollama is down you get the exact command to fix it instead of a blank screen.</p></div>
+  </div>
+</div></section>
+<section id="how"><div class="wrap">
+  <p class="eyebrow">How it works</p><h2>Small on purpose, careful where it counts</h2>
+  <p class="sub">Seven behaviours that make a local model pleasant to use.</p>
+  <div class="cards"><div class="card"><div class="ic">01</div><h3>Streams and really stops</h3><p>Tokens appear as they are generated. Stop (or Esc) aborts generation on the Mac, not just in the UI.</p></div><div class="card"><div class="ic">02</div><h3>Remembers</h3><p>Every message is sent with the conversation so far, so a follow-up like “make it more formal” works.</p></div><div class="card"><div class="ic">03</div><h3>Shows its reasoning</h3><p>Reasoning models such as Qwen3 and DeepSeek-R1 get a collapsible block instead of raw think-tags, even while streaming.</p></div><div class="card"><div class="ic">04</div><h3>Knows your models</h3><p>The picker lists what is actually installed, smallest first; embedding and cloud-only models are hidden.</p></div><div class="card"><div class="ic">05</div><h3>Measures</h3><p>Tokens per second, token count and time to first token under each answer, as reported by Ollama.</p></div><div class="card"><div class="ic">06</div><h3>Fails helpfully</h3><p>Ollama down or a model missing? You get the command to start or pull it.</p></div></div>
+  <h3 style="margin:34px 0 14px">One request, three hops, all on 127.0.0.1</h3><div class="flow" role="list"><div class="node"><div class="n">01</div><b>Browser</b><small>React UI sends model and messages</small></div><div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="node hl"><div class="n">02</div><b>Next.js route</b><small>validates, forwards to Ollama</small></div><div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="node"><div class="n">03</div><b>Ollama</b><small>streams NDJSON tokens and thinking</small></div><div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="node"><div class="n">04</div><b>Parse</b><small>split reasoning from answer while streaming</small></div><div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="node"><div class="n">05</div><b>Render</b><small>markdown, reasoning block, stats</small></div></div>
+</div></section>
+<section id="screens"><div class="wrap">
+  <p class="eyebrow">Screens</p><h2>What it looks like</h2>
+  <p class="sub">Captured from the real app on localhost.</p>
+  <div class="frame" style="margin-bottom:18px"><div class="bar"><i></i><i></i><i></i><b>Recorded walkthrough · typing, streaming, reasoning, follow-up</b></div><video controls preload="metadata" playsinline poster="img/docs-media-chat-dark.webp" src="img/docs-media-demo.mp4"></video></div><div class="gallery"><figure data-zoom="A conversation in dark mode — Streaming answer with the stats line underneath."><div class="frame"><div class="bar"><i></i><i></i><i></i><b>localhost:3000 · LocalMind</b></div><img src="img/docs-media-chat-dark.webp" alt="A conversation in dark mode" width="1280" height="800" loading="lazy" decoding="async"></div><figcaption><b>A conversation in dark mode</b> Streaming answer with the stats line underneath.</figcaption></figure><figure data-zoom="Start screen in light mode — The installed model and four quick prompts."><div class="frame"><div class="bar"><i></i><i></i><i></i><b>localhost:3000 · LocalMind</b></div><img src="img/docs-media-home-light.webp" alt="Start screen in light mode" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Start screen in light mode</b> The installed model and four quick prompts.</figcaption></figure><figure data-zoom="When Ollama is not running — A red status pill and the commands to start it, instead of a blank screen."><div class="frame"><div class="bar"><i></i><i></i><i></i><b>localhost:3000 · LocalMind</b></div><img src="img/docs-media-offline.webp" alt="When Ollama is not running" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>When Ollama is not running</b> A red status pill and the commands to start it, instead of a blank screen.</figcaption></figure></div>
+</div></section>
+<section id="evidence"><div class="wrap">
+  <p class="eyebrow">Evidence</p><h2>What is real, and what is not</h2>
+  
+  <div class="metrics"><div class="metric"><div class="v">10</div><div class="l">unit tests</div><div class="s">stream parsing across chunk boundaries, reasoning split, stats, validation, model filtering</div></div><div class="metric"><div class="v">0</div><div class="l">telemetry or cloud calls</div><div class="s">browser to Next.js to Ollama, all on 127.0.0.1</div></div><div class="metric"><div class="v">60–85</div><div class="l">tokens per second</div><div class="s">measured with qwen3:1.7b on one Apple-silicon Mac</div></div></div>
+  <div class="honest" style="margin-top:18px">
+      <div class="card real"><h3><span class="pill ok">REAL</span> Built and verified</h3><ul><li>Streaming, stop, conversation memory, reasoning view, installed-model picker and history all work</li><li>CI runs tests, lint, typecheck and build on every push</li><li>The recording and screenshots come from the running app</li></ul></div>
+      <div class="card sim"><h3><span class="pill warn">SIMULATED</span> Mocked or not built yet</h3><ul><li>No authentication: it is built for localhost and must not be exposed to a network</li><li>History lives in this browser's localStorage, newest 50 kept</li><li>Speed figures come from one Mac and one small model; yours will differ</li><li>PDF chat, system-prompt presets and Markdown export are on the roadmap, not built</li></ul></div></div>
+</div></section>
+<section id="run"><div class="wrap two">
+  <div><p class="eyebrow">Run it yourself</p><h2>Run it locally</h2>
+  
+  <div class="code"><button class="copy" type="button">Copy</button><pre><code>brew install ollama
+ollama serve                 # keep running
+ollama pull qwen3:1.7b       # 1.4 GB; any chat model works
+
+git clone https://github.com/phlppgdfry/LocalMind.git
+cd LocalMind
+npm install
+npm run dev                  # http://localhost:3000
+
+npm test                     # 10 unit tests</code></pre></div></div>
+  <div><p class="eyebrow">Go deeper</p><h2>Read the source</h2>
+  <div class="links"><a href="https://github.com/phlppgdfry/LocalMind"><span>Repository</span><span>github</span></a><a href="https://github.com/phlppgdfry/LocalMind/blob/HEAD/README.md"><span>README</span><span>md</span></a><a href="https://github.com/phlppgdfry/LocalMind/blob/HEAD/app/api/chat/route.ts"><span>Chat route and stream handling</span><span>ts</span></a><a href="https://github.com/phlppgdfry/LocalMind/blob/HEAD/lib/ollama.ts"><span>Parsing logic, unit-tested</span><span>ts</span></a><a href="https://github.com/phlppgdfry/LocalMind/blob/HEAD/LICENSE"><span>MIT licence</span><span>md</span></a></div></div>
+</div></section></main>
+<footer><div class="wrap">
+  <span>LocalMind · A portfolio project by Philippe Godfroy</span>
+  <span><a href="https://www.philippegodfroy.com/work">More projects</a> · <a href="https://github.com/phlppgdfry/LocalMind">Source</a></span>
+</div></footer>
+<script src="assets/showcase.js"></script>
+
+
+</body></html>
